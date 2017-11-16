@@ -28,7 +28,7 @@ app.post('/webhook/',function(req,res){
 		let sender=event.sender.id
 		if(event.message&&event.message.text){
 		let text=event.message.text
-		sendtext(sender,"Shm mire e the,  "+text.substring(0,100))
+		sendtext(sender,"krejt mire,  "+text.substring(0,100))
 		}
 	}
 	res.sendStatus(200)
@@ -38,8 +38,8 @@ function sendText(sender,text){
 	let messageData={text:text}
 	request({
 		url:"https://graph.facebook.com/v2.6/me/messages/",
-		qs:{access_token:token}
-		method:"POST"
+		qs:{access_token:token},
+		method:"POST",
 		json:{
 			recipient:{id:sender},
 			message:messageData
