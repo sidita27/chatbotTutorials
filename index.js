@@ -19,7 +19,7 @@ app.get('/webhook/',function(req,res){
 	if(req.query['hub.verify_token']==="sidita"){
 		res.send(req.query['hub.challange'])
 	}
-	res.send("wrong token")
+	res.send("token gabim")
 })
 app.post('/webhook/',function(req,res){
 	let messaging_events=req.body.entry[0].messaging
